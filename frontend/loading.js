@@ -1,0 +1,3 @@
+const loading=document.querySelector('#loading-state');const results=document.querySelector('#results');const empty=document.querySelector('#empty-state');
+document.querySelector('#quote-form').addEventListener('submit',()=>{window.setTimeout(()=>{const button=document.querySelector('#quote-form button[type=submit]');if(!button.disabled)return;loading.hidden=false;empty.hidden=true;results.hidden=true;window.setTimeout(()=>{if(results.hidden)loading.hidden=true},15000)},0)},true);
+new MutationObserver(()=>{if(!results.hidden)loading.hidden=true}).observe(results,{attributes:true,attributeFilter:['hidden']});

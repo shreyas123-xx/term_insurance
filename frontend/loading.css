@@ -1,0 +1,5 @@
+.loading-state{display:grid;place-items:center;align-content:center;min-height:570px;text-align:center;color:var(--ink)}
+.spinner{width:38px;height:38px;border:3px solid #dcebe3;border-top-color:var(--mint-dark);border-radius:50%;animation:spin .8s linear infinite}
+.loading-state p{font-weight:700;margin:18px 0 2px}.loading-state small{color:var(--muted)}
+.loading-dots{display:inline-block;width:18px;text-align:left;overflow:hidden;vertical-align:bottom;animation:dots 1.2s steps(4,end) infinite}
+@keyframes spin{to{transform:rotate(360deg)}}@keyframes dots{0%{width:0}100%{width:18px}}

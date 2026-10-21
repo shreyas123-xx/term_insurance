@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ziro · Term insurance quotes</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="loading.css">
+  <link rel="stylesheet" href="activity.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="hero">
+      <div class="eyebrow">ZIRO / QUOTE AGENT</div>
+      <h1>Find a term plan that fits.</h1>
+      <p>Compare indicative premiums with a clear evidence trail. Nothing is submitted without your approval.</p>
+    </header>
+
+    <section class="layout">
+      <form id="quote-form" class="panel form-panel">
+        <div class="panel-heading"><span class="step">01</span><div><h2>Your profile</h2><p>Tell us a little about the cover you need.</p></div></div>
+        <label>Full name<input name="name" value="Asha Rao" required></label>
+        <div class="two-col">
+          <label>Age<input name="age" type="number" min="18" max="65" value="30" required></label>
+          <label>Term<input name="term" type="number" min="5" max="40" value="30" required><small>years</small></label>
+        </div>
+        <label>Cover amount<input name="cover" type="number" min="2500000" max="100000000" step="100000" value="10000000" required><small>₹25 lakh – ₹10 crore</small></label>
+
+        <div class="health-heading"><h3>Health questions</h3><span>Required for a recommendation</span></div>
+        <div id="health-fields" class="health-list"></div>
+        <button class="primary" type="submit">Compare quotes <span>→</span></button>
+        <p class="privacy">Your answers stay in this session. Premiums shown are illustrative.</p>
+      </form>
+
+      <section class="panel results-panel" aria-live="polite">
+        <div id="loading-state" class="loading-state" hidden role="status" aria-live="polite"><div class="spinner" aria-hidden="true"></div><p>Comparing quotes<span class="loading-dots">...</span></p><small>Checking premiums and evidence</small></div>
+        <div id="empty-state" class="empty-state"><div class="empty-icon">✦</div><h2>Your comparison is waiting</h2><p>Complete your profile to see plans, premiums, claim ratios, and exclusions side by side.</p></div>
+        <div id="results" hidden>
+          <div class="results-top"><div><div class="eyebrow">YOUR COMPARISON</div><h2 id="result-title">Three plans, one clear view.</h2></div><span id="app-id" class="app-id"></span></div>
+          <div id="notice" class="notice" hidden></div>
+          <div id="agent-activity" class="agent-activity" hidden aria-live="polite"></div>
+          <div id="quote-cards" class="quote-cards"></div>
+          <div class="evidence"><h3>Decision rule</h3><p>Lowest annual premium among quotes with complete health data. Ties go to the higher claim ratio.</p></div>
+          <div id="approval" class="approval" hidden></div>
+          <div id="mock-form" class="mock-form" hidden></div>
+        </div>
+      </section>
+    </section>
+  </main>
+  <script src="agent-ui.js"></script>
+  <script src="loading.js"></script>
+</body>
+</html>
